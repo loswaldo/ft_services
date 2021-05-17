@@ -3,7 +3,7 @@ FROM alpine
 
 RUN apk update && apk upgrade
 RUN apk add openrc nginx php-fpm php-common php-mbstring php-xmlrpc php-soap php-gd php-xml php-intl php-mysqli php-cli php-ldap php-zip php7-session php-curl php-iconv php-json php7-json fcgi
-
+RUN apk add telegraf
 RUN openrc && touch /run/openrc/softlevel
 
 RUN cd /var/www \
@@ -21,6 +21,7 @@ COPY setup.sh /setup.sh
 
 COPY healthcheck.sh  /
 COPY nginx.conf /
+COPY telegraf.conf /etc/telegraf.conf
 
 RUN chmod +x /setup.sh
 EXPOSE 5000

@@ -51,6 +51,13 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 3306
+        livenessProbe:
+          exec:
+            command:
+              - "/bin/sh"
+              - "/healthcheck.sh"
+          initialDelaySeconds: 30
+          periodSeconds: 5
       volumes:
       - name: volume
         persistentVolumeClaim:

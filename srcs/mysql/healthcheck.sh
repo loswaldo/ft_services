@@ -1,6 +1,6 @@
 if [ $(ps aux | grep telegraf | grep -v grep | wc -l) == 0 ]; then
     exit 1
 fi
-if [ $(ps aux | grep influxd | grep -v grep | wc -l) == 0 ]; then
+if [ $(ps aux | grep mariadbd | grep -v grep | wc -l) == 0 ]; then
     exit 1
 fi

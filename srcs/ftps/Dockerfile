@@ -2,7 +2,7 @@ FROM alpine
 
 RUN apk update && apk upgrade
 
-RUN apk add openrc vsftpd openssl
+RUN apk add openrc vsftpd openssl telegraf
 RUN openrc && touch /run/openrc/softlevel
 
 RUN echo "root:root" | chpasswd
@@ -14,5 +14,6 @@ COPY healthcheck.sh /
 COPY vsftpd.conf /etc/vsftpd/vsftpd.conf
 RUN chmod +x /setup.sh
 
+COPY telegraf.conf /etc/telegraf.conf
 EXPOSE 21 20 30000
 ENTRYPOINT sh /setup.sh

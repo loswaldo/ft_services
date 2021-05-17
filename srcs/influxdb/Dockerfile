@@ -13,5 +13,6 @@ RUN chmod +x /setup.sh
 COPY telegraf.conf /etc/telegraf.conf
 
 COPY healthcheck.sh /
+RUN chmod +x /healthcheck.sh
 EXPOSE 8086
 ENTRYPOINT sh /setup.sh

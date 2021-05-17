@@ -1,5 +1,6 @@
 #!/bin/sh
 
+rc-service telegraf start
 rc-service mariadb setup
 rc-service mariadb start \
 && mysql -e "CREATE DATABASE IF NOT EXISTS wordpress" \

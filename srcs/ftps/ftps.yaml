@@ -50,6 +50,6 @@ spec:
           exec:
             command:
               - "/bin/sh"
-              - "healthcheck.sh"
+              - "/healthcheck.sh"
           initialDelaySeconds: 30
           periodSeconds: 5
