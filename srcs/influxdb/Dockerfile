@@ -1,12 +1,9 @@
 FROM alpine
 
-
 RUN apk update && apk upgrade
 
 RUN apk add telegraf influxdb openrc
 RUN openrc && touch /run/openrc/softlevel
-
-
 
 COPY setup.sh /
 RUN chmod +x /setup.sh

@@ -17,8 +17,7 @@ COPY nginx.conf /etc/nginx/nginx.conf
 
 RUN mkdir -p /run/nginx
 
-COPY setup.sh /setup.sh
-
+COPY setup.sh /
 COPY healthcheck.sh  /
 COPY nginx.conf /
 COPY telegraf.conf /etc/telegraf.conf
